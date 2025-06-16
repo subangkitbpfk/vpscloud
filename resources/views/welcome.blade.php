@@ -4,87 +4,102 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>@yield('title', 'Kementerian Kesehatan')</title>
 
     @livewireStyles
 
-    {{-- Fonts & Bootstrap --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f9f9f9;
         }
 
-        .top-header {
-            background-color: #0B6E4F;
-            color: white;
+        .top-bar {
+            background-color: #007B5E;
+            color: #fff;
             padding: 10px 0;
         }
 
-        .top-header .logo {
-            max-height: 60px;
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .main-navbar {
-            background-color: #ffffff;
-            border-bottom: 2px solid #0B6E4F;
+        .main-header {
+            background-color: #fff;
+            border-bottom: 3px solid #007B5E;
         }
 
-        .main-navbar .nav-link {
-            color: #0B6E4F !important;
+        .main-header .navbar-nav .nav-link {
+            color: #007B5E;
             font-weight: 500;
-            margin-right: 15px;
         }
 
-        .main-navbar .nav-link:hover {
-            text-decoration: underline;
+        .main-header .nav-link:hover {
+            color: #005843;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            border-radius: 20px;
+            padding-right: 40px;
+        }
+
+        .search-bar .btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
     </style>
 </head>
 
 <body>
-    {{-- Header Atas --}}
-    <div class="top-header">
-        <div class="container d-flex align-items-center">
-            <img src="{{ asset('img/logo-kemenkes.png') }}" alt="Logo Kemenkes" class="logo me-3">
-            <h5 class="mb-0">Kementerian Kesehatan Republik Indonesia</h5>
+    <div class="top-bar">
+        <div class="container">
+            <div>
+                <img src="{{ asset('img/logo-kemenkes.png') }}" alt="Logo" height="40">
+                <span class="ms-2 fw-bold">Kementerian Kesehatan Republik Indonesia</span>
+            </div>
+            <div class="search-bar d-none d-md-block">
+                <form class="d-flex">
+                    <input type="text" class="form-control" placeholder="Pencarian...">
+                    <button class="btn btn-light px-3" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 
-    {{-- Navbar --}}
-    <nav class="navbar navbar-expand-lg main-navbar">
+    <nav class="navbar navbar-expand-lg main-header">
         <div class="container">
-            <a class="navbar-brand fw-bold text-success" href="{{ url('/') }}">KEMKES</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand text-success fw-bold" href="/">Kemkes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Berita</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">BERANDA</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">PROFIL</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">INFORMASI PUBLIK</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">LAYANAN</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">MEDIA</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">TAUTAN</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">KONTAK KAMI</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    {{-- Isi Konten --}}
     <main class="py-4">
         <div class="container">
             {{ $slot ?? '' }}
