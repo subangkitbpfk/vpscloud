@@ -10,6 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         body {
@@ -36,7 +37,10 @@
 
         .main-header .navbar-nav .nav-link {
             color: #007B5E;
-            font-weight: 500;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .main-header .nav-link:hover {
@@ -88,13 +92,13 @@
 
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#" class="nav-link">BERANDA</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">PROFIL</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">INFORMASI PUBLIK</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">LAYANAN</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">MEDIA</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">TAUTAN</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">KONTAK KAMI</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house-door-fill"></i> BERANDA</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-info-circle-fill"></i> PROFIL</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-patch-check-fill"></i> INFORMASI PUBLIK</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-caret-down-square-fill"></i> LAYANAN</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-play-circle-fill"></i> MEDIA</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-link-45deg"></i> TAUTAN</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-clock-fill"></i> KONTAK KAMI</a></li>
                 </ul>
             </div>
         </div>
