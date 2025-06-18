@@ -1,7 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Homecontroller;
 use Illuminate\Support\Facades\Route;
+
+
+// profile home
+Route::get('/home',[Homecontroller::class,'index'])->name('home.index');
+
+// end profile
 
 Route::get('/', function () {
     return view('dashboard');
