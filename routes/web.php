@@ -2,11 +2,18 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\Blogcontroller;
 use Illuminate\Support\Facades\Route;
 
 
 // profile home
 Route::get('/home',[Homecontroller::class,'index'])->name('home.index');
+Route::get('/blog',[Blogcontroller::class,'index'])->name('blog.index');
+
+
+Route::get('/master', function () {
+    return view('layouts.master');
+});
 
 // end profile
 
